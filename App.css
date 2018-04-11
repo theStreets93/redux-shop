@@ -20,6 +20,10 @@ p:last-child {
     margin: 0;
 }
 
+.textAlignCenter {
+    text-align: center;
+}
+
 body {
     margin: 0;
     padding: 0;

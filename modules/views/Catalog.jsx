@@ -270,6 +270,7 @@ class Catalog extends Component {
     render() {
         return (
             <main className="main">
+                <h1 className="textAlignCenter">THIS IS SAMPLE WITHOUT REDUX - WORKSHOP 1</h1>
                 <div className="catalog-products">
                     <div className="catalog-products-sidebar">
                         <div className="catalog-products-sidebar-title">Sort by:</div>
