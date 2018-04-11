@@ -37,12 +37,28 @@ class Cart extends Component {
                     </ul>
 
                     <div className="cart-summary">
-                        <div className="cart-summary-row cart-subtotals">
-                            <strong>{'Cart Subtotal: '}</strong><span>{this.props.minicartSubtotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                        </div>
-                        <div className="cart-summary-row cart-discount">
-                            <strong>{'Cart Discount: '}</strong><span>{this.props.minicartDiscount.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                        </div>
+                        {this.props.minicartSubtotals ?
+                            <div className="cart-summary-row cart-subtotals">
+                                <strong>{'Cart Subtotal: '}</strong><span>{this.props.minicartSubtotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                            </div>
+                        :
+                            ''
+                        }
+                        { this.props.minicartDiscount ?
+                            <div className="cart-summary-row cart-discount">
+                                <strong>{'Cart Discount: '}</strong><span>{this.props.minicartDiscount.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                            </div>
+                        :
+                            ''
+                        }
+                        {this.props.minicartShipping ?
+                            <div className="cart-summary-row cart-shipping">
+                                <strong>{'Shipping: '}</strong><span>{this.props.minicartShipping.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                            </div>
+                        :
+                            ''
+                        }
+
                         <div className="cart-summary-row cart-totals">
                             <strong>{'Cart Total: '}</strong><span>{this.props.minicartTotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
                         </div>
@@ -62,6 +78,7 @@ function mapStateToProps(state){
         minicartTotals: state.cart.minicartTotals,
         minicartSubtotals: state.cart.minicartSubtotals,
         minicartDiscount: state.cart.minicartDiscount,
+        minicartShipping: state.cart.minicartShipping,
         minicartQty: state.cart.minicartQty,
         minicartCurrency: state.cart.minicartCurrency
     };

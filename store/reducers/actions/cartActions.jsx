@@ -93,8 +93,10 @@ export const addToCart = (minicartId,itemid,sku) => {
             })
         })
             .then(response => response.json())
-            .then(data => dispatch(getCartItems(minicartId,itemid,sku)))
-            .then(data => dispatch(getCartInfo(minicartId)));
+            .then(data => {
+                dispatch(getCartItems(minicartId,itemid,sku));
+                dispatch(getCartInfo(minicartId));
+            });
     }
 };
 
@@ -115,7 +117,9 @@ export const removeFromCart = (minicartId,itemid,sku) => {
             method: 'DELETE'
         })
             .then(response => response.json())
-            .then(data => dispatch(getCartItems(minicartId,itemid,sku)))
-            .then(data => dispatch(getCartInfo(minicartId)));
+            .then(data => {
+                dispatch(getCartItems(minicartId,itemid,sku));
+                dispatch(getCartInfo(minicartId));
+            });
     }
 };
