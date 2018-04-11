@@ -3,6 +3,8 @@ import * as actionTypes from './actions/cartActions';
 const initialState = {
     minicartId: null,
     minicartItems: [],
+    minicartSubtotals: 0,
+    minicartDiscount: 0,
     minicartTotals: 0,
     minicartQty: 0,
     minicartCurrency: null
@@ -37,6 +39,8 @@ export default function minicartReducer(state = initialState, action) {
         return {
             ...state,
             minicartTotals: action.result.grand_total,
+            minicartSubtotals: action.result.subtotal,
+            minicartDiscount: action.result.discount_amount,
             minicartQty: action.result.items.length,
             minicartCurrency: action.result.currency_code
         }
