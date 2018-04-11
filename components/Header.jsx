@@ -10,9 +10,7 @@ const Header = () => (
         <nav className="main-nav">
             <ul className="main-nav__list">
                 <li>
-                    <NavLink className="nav__link" activeClassName="active" exact to="/">
-                        Home
-                    </NavLink>
+                    <NavLink className="nav__link" activeClassName="active" exact to="/">Home</NavLink>
                 </li>
                 <li>
                     <NavLink className="nav__link" activeClassName="active" to="/cart">Cart</NavLink>

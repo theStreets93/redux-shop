@@ -73,6 +73,8 @@ export const addToCart = (minicartId,itemid,sku) => {
         })
             .then(response => response.json())
             .then(data => dispatch(getCartItems(minicartId,itemid,sku)));
+
+        console.log("ADDED: " + sku);
     }
 };
 
@@ -95,6 +97,6 @@ export const removeFromCart = (minicartId,itemid,sku) => {
             .then(response => response.json())
             .then(data => dispatch(getCartItems(minicartId,itemid,sku)));
 
-
+        console.log("REMOVED: " + sku);
     }
 };
