@@ -4,13 +4,15 @@ export const STORE_MINICART_ID = 'STORE_MINICART_ID';
 export const GET_CART_ITEMS = 'GET_CART_ITEMS';
 export const STORE_CART_ITEMS = 'STORE_CART_ITEMS';
 
+export const GET_CART_INFO = 'GET_CART_INFO';
+export const STORE_CART_INFO = 'STORE_CART_INFO';
+
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const STORE_TO_CART = 'STORE_TO_CART';
 
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const STORE_FROM_CART = 'STORE_FROM_CART';
 
-export const COMPONENT_RERENDER = 'COMPONENT_RERENDER';
 
 
 /*
@@ -53,6 +55,25 @@ export const getCartItems = (minicartId,item,sku) => {
 };
 
 /*
+    GET CART INFO
+*/
+
+export const storeCartInfo = (res) => {
+    return {
+        type: GET_CART_INFO,
+        result: res
+    };
+};
+
+export const getCartInfo = (minicartId) => {
+    return dispatch => {
+        fetch('http://magento2.inchoo4u.net/rest/V1/guest-carts/' + minicartId + '/totals')
+            .then(response => response.json())
+            .then(data => dispatch(storeCartInfo(data)))
+    }
+};
+
+/*
     ADD TO CART
 */
 export const storeToCart = (res) => {
@@ -72,7 +93,8 @@ export const addToCart = (minicartId,itemid,sku) => {
             })
         })
             .then(response => response.json())
-            .then(data => dispatch(getCartItems(minicartId,itemid,sku)));
+            .then(data => dispatch(getCartItems(minicartId,itemid,sku)))
+            .then(data => dispatch(getCartInfo(minicartId)));
 
         console.log("ADDED: " + sku);
     }
@@ -95,7 +117,8 @@ export const removeFromCart = (minicartId,itemid,sku) => {
             method: 'DELETE'
         })
             .then(response => response.json())
-            .then(data => dispatch(getCartItems(minicartId,itemid,sku)));
+            .then(data => dispatch(getCartItems(minicartId,itemid,sku)))
+            .then(data => dispatch(getCartInfo(minicartId)));
 
         console.log("REMOVED: " + sku);
     }

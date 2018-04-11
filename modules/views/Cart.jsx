@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import { connect } from 'react-redux';
-import {removeFromCart, getCart, getCartItems} from "../../store/reducers/actions/cartActions";
+import {removeFromCart, getCart, getCartItems, getCartInfo} from "../../store/reducers/actions/cartActions";
 import CartItems from './checkout/CartItems.jsx';
 
 class Cart extends Component {
@@ -9,13 +9,14 @@ class Cart extends Component {
             this.props.getCart();
         }else{
             this.props.getCartItems(this.props.minicartId);
+            this.props.getCartInfo(this.props.minicartId);
         }
     }
 
     render() {
         return (
             <main className="main checkout-cart-index">
-                <h1 className="cart-title">{'Cart'}</h1>
+                <h1 className="cart-title">{'Your Shopping Cart'} { this.props.minicartQty > 0 ? '(' + this.props.minicartQty + ')' : '' }</h1>
                 <div className="cart-table">
                     <ul className="cart-table-items">
                         { this.props.minicartItems.length ?
@@ -34,8 +35,14 @@ class Cart extends Component {
                             <li>{'You have no items in your shopping cart.'}</li>
                         }
                     </ul>
-                    <div className="cart-totals"></div>
+
+                    <div className="cart-summary">
+                        <div className="cart-totals">
+                            <strong>{'Cart Total: '}</strong><span>{'$' + this.props.minicartTotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') }</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div className="cart-subtitle"><strong>{'Cart ID: '}</strong><span>{ this.props.minicartId }</span></div>
             </main>
         );
@@ -45,7 +52,10 @@ class Cart extends Component {
 function mapStateToProps(state){
     return {
         minicartId: state.cart.minicartId,
-        minicartItems: state.cart.minicartItems
+        minicartItems: state.cart.minicartItems,
+        minicartTotals: state.cart.minicartTotals,
+        minicartQty: state.cart.minicartQty,
+        minicartCurrency: state.cart.minicartCurrency
     };
 }
 
@@ -53,6 +63,7 @@ const mapDispatchToProps = dispatch => {
     return {
         getCart: (minicartId,itemid,sku) => dispatch(getCart(minicartId,itemid,sku)),
         getCartItems: (minicartId,item,sku) => dispatch(getCartItems(minicartId,item,sku)),
+        getCartInfo: (minicartId,item,sku) => dispatch(getCartInfo(minicartId,item,sku)),
         removeFromCart: (minicartId,itemid,sku) => dispatch(removeFromCart(minicartId,itemid,sku))
     }
 };

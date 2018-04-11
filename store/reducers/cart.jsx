@@ -2,7 +2,10 @@ import * as actionTypes from './actions/cartActions';
 
 const initialState = {
     minicartId: null,
-    minicartItems: []
+    minicartItems: [],
+    minicartTotals: 0,
+    minicartQty: 0,
+    minicartCurrency: null
 };
 
 export default function minicartReducer(state = initialState, action) {
@@ -30,10 +33,14 @@ export default function minicartReducer(state = initialState, action) {
             minicartItems: action.result
         }
     }
-    if(action.type === actionTypes.COMPONENT_RERENDER) {
+    if(action.type === actionTypes.GET_CART_INFO) {
         return {
             ...state,
+            minicartTotals: action.result.grand_total,
+            minicartQty: action.result.items.length,
+            minicartCurrency: action.result.currency_code
         }
     }
+
     return state;
 }

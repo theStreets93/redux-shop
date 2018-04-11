@@ -443,6 +443,13 @@ body {
     padding: 20px 0;
 }
 
+.checkout-cart-index .cart-table:after {
+    clear: both;
+    content: "";
+    display: block;
+    width: 100%;
+}
+
 .checkout-cart-index .cart-title {
     margin-bottom: 0;
 }
@@ -452,11 +459,20 @@ body {
     line-height: 16px;
 }
 
+.checkout-cart-index .cart-summary {
+    float: right;
+    width: 23%;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
 .checkout-cart-index .cart-table-items {
     margin: 0;
     list-style-type: none;
     padding: 10px;
     border: 1px solid #ddd;
+    float: left;
+    width: 75%;
 }
 
 .cart-list-item {
