@@ -573,6 +573,16 @@ body {
     background-color: #666;
 }
 
+.cms-page a {
+    color: #61dafb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.cms-page a:hover {
+    color: #0fbbec;
+}
+
 .footer {
     text-align: center;
     background-color: #222;
