@@ -13,7 +13,7 @@ export const STORE_TO_CART = 'STORE_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const STORE_FROM_CART = 'STORE_FROM_CART';
 
-
+export const COMPONENT_RERENDER = 'COMPONENT_RERENDER';
 
 /*
     GET CARD ID

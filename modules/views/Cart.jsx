@@ -36,31 +36,46 @@ class Cart extends Component {
                         }
                     </ul>
 
-                    <div className="cart-summary">
-                        {this.props.minicartSubtotals ?
-                            <div className="cart-summary-row cart-subtotals">
-                                <strong>{'Cart Subtotal: '}</strong><span>{this.props.minicartSubtotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                            </div>
-                        :
-                            ''
-                        }
-                        { this.props.minicartDiscount ?
-                            <div className="cart-summary-row cart-discount">
-                                <strong>{'Cart Discount: '}</strong><span>{this.props.minicartDiscount.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                            </div>
-                        :
-                            ''
-                        }
-                        {this.props.minicartShipping ?
-                            <div className="cart-summary-row cart-shipping">
-                                <strong>{'Shipping: '}</strong><span>{this.props.minicartShipping.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                            </div>
-                        :
-                            ''
-                        }
+                    <div className="cart-sidebar">
+                        <div className="cart-summary">
+                            {this.props.minicartSubtotals ?
+                                <div className="cart-summary-row cart-subtotals">
+                                    <strong>{'Cart Subtotal: '}</strong><span>{this.props.minicartSubtotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                                </div>
+                                :
+                                ''
+                            }
+                            { this.props.minicartDiscount ?
+                                <div className="cart-summary-row cart-discount">
+                                    <strong>{'Cart Discount: '}</strong><span>{this.props.minicartDiscount.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                                </div>
+                                :
+                                ''
+                            }
+                            {this.props.minicartShipping ?
+                                <div className="cart-summary-row cart-shipping">
+                                    <strong>{'Shipping: '}</strong><span>{this.props.minicartShipping.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                                </div>
+                                :
+                                ''
+                            }
+                            {this.props.minicartTotals ?
+                                <div className="cart-summary-row cart-totals">
+                                    <strong>{'Cart Total: '}</strong><span>{this.props.minicartTotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                                </div>
+                                :
+                                <div className="cart-summary-row cart-totals">
+                                    0.00 USD
+                                </div>
+                            }
+                        </div>
 
-                        <div className="cart-summary-row cart-totals">
-                            <strong>{'Cart Total: '}</strong><span>{this.props.minicartTotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                        <div className="cart-actions">
+                            {this.props.minicartTotals ?
+                                <button className="button-primary">{'Proceed to Checkout'}</button>
+                            :
+                                ''
+                            }
                         </div>
                     </div>
                 </div>

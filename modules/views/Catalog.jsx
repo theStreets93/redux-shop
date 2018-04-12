@@ -6,6 +6,12 @@ import * as endpoints from '../../const/api';
 import ProductItem from './catalog/ProductItem';
 
 class Catalog extends Component {
+
+    state = {
+        messageActive: false,
+        currentProduct: 0
+    };
+
     componentDidMount() {
 
         this.props.fetchProducts();
@@ -13,12 +19,20 @@ class Catalog extends Component {
         if(!this.props.minicartId){
             this.props.getCart();
         }
-    }
+    };
+
+    productAdded = (productid) => {
+        this.setState({
+            messageActive: true,
+            currentProduct: productid.id
+        });
+
+        (!this.state.messageActive ? setTimeout(function() { this.setState({messageActive: false}) }.bind(this), 500) : this.setState({messageActive: true}) )
+    };
 
     render() {
         return (
             <main className="main">
-                <div className="global-messages"></div>
                 <div className="catalog-products">
                     <div className="catalog-products-sidebar">
                         <div className="sidebar-widget sidebar-widget-counter">
@@ -56,13 +70,16 @@ class Catalog extends Component {
                                     return (
                                         <ProductItem
                                             key={product.id}
+                                            id={product.id}
                                             sku={product.sku}
                                             name={product.name}
                                             click={this.props.addToCart}
                                             price={product.price}
                                             imgSrc={endpoints.MEDIA_ENDPOINT + thumbnail.value}
                                             itemId={product.item_id}
-                                            addToCart={(event) => this.props.addToCart( this.props.minicartId ,product.id, product.sku)}
+                                            addToCart={(event) => this.props.addToCart( this.props.minicartId, product.id, product.sku, this.productAdded(product))}
+                                            messageActive={this.state.messageActive}
+                                            currentProduct={this.state.currentProduct}
                                         />
                                     );
                                 })}
@@ -88,7 +105,7 @@ function mapStateToProps(state){
         count: state.counter.count,
         productItems: state.catalog.productItems,
         productTotals: state.catalog.productTotals,
-        minicartId: state.cart.minicartId
+        minicartId: state.cart.minicartId,
     };
 }
 

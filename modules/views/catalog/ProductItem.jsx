@@ -15,9 +15,15 @@ const ProductListItem = props => {
           {props.price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}{' '}
           <span className="product-item-currency">USD</span>
         </div>
-        <button className="product-item-button" onClick={props.addToCart}>
-          Add to Cart
-        </button>
+          { props.messageActive && props.currentProduct === props.id ?
+              <button className="product-item-button">
+                  Added
+              </button>
+              :
+              <button className="product-item-button" onClick={props.addToCart}>
+                  Add to Cart
+              </button>
+          }
       </div>
     </li>
   );

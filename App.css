@@ -217,7 +217,6 @@ body {
     content: "-";
 }
 
-
 .layered-nav-item label:hover span:after {
     color: #222;
 }
@@ -459,9 +458,12 @@ body {
     line-height: 16px;
 }
 
-.checkout-cart-index .cart-summary {
+.checkout-cart-index .cart-sidebar {
     float: right;
     width: 23%;
+}
+
+.checkout-cart-index .cart-summary {
     padding: 10px;
     border: 1px solid #ddd;
 }
@@ -500,6 +502,28 @@ body {
     border: 1px solid #ddd;
     float: left;
     width: 75%;
+}
+
+.checkout-cart-index .cart-actions {
+    margin: 20px 0;
+}
+
+.checkout-cart-index .cart-actions .button-primary {
+    display: block;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+    padding: 10px 20px;
+    width: 100%;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.checkout-cart-index .cart-actions .button-primary:hover {
+    background-color: #666;
 }
 
 .cart-list-item {

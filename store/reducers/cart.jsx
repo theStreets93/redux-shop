@@ -8,7 +8,8 @@ const initialState = {
     minicartShipping: 0,
     minicartTotals: 0,
     minicartQty: 0,
-    minicartCurrency: null
+    minicartCurrency: null,
+    renderLoading: false
 };
 
 export default function minicartReducer(state = initialState, action) {
@@ -27,13 +28,15 @@ export default function minicartReducer(state = initialState, action) {
     if(action.type === actionTypes.ADD_TO_CART) {
         return {
             ...state,
-            minicartItems: action.result
+            minicartItems: action.result,
+            renderLoading: true
         }
     }
     if(action.type === actionTypes.REMOVE_FROM_CART) {
         return {
             ...state,
-            minicartItems: action.result
+            minicartItems: action.result,
+            renderLoading: true
         }
     }
     if(action.type === actionTypes.GET_CART_INFO) {
@@ -47,6 +50,5 @@ export default function minicartReducer(state = initialState, action) {
             minicartCurrency: action.result.currency_code
         }
     }
-
     return state;
 }
