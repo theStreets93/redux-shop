@@ -4,14 +4,15 @@ import {NavLink} from 'react-router-dom';
 import Minicart from './Minicart';
 
 const Header = () => (
-    <div>
+    <div className="header-holder">
         <header className="header">
             <div className="header-wrapper">
-                <div class="header-info">
+                <div className="header-info">
                     <h1 className="title"><img src={logo} className="logo" alt="logo" /> React.js</h1>
                 </div>
-
-                <Minicart />
+                <div className="header-actions">
+                    <Minicart />
+                </div>
             </div>
         </header>
         <nav className="main-nav">

@@ -13,11 +13,27 @@ class Minicart extends Component {
         }
     }
 
+    minicartState = () => {
+        (this.state.minicartState ? this.setState({minicartState: false}) :  this.setState({minicartState: true})  )
+    };
+
+    state = {
+        minicartState: false
+    };
+
     render() {
         return (
             <div className="minicart">
-                <div className="minicart-title">{'Minicart'} { this.props.minicartQty > 0 ? '(' + this.props.minicartQty + ')' : '' }</div>
+                <div className={this.state.minicartState ? 'minicart-title active' : 'minicart-title'}><button onClick={this.minicartState}>{'Minicart'} { this.props.minicartQty > 0 ? <strong>{ this.props.minicartQty }</strong> : '' }</button></div>
                 <div className="minicart-table">
+                    { this.props.minicartItems.length ?
+                        <div className="minicart-subtitle">
+                            {this.props.minicartQty} ITEMS IN YOUR CART
+                        </div>
+                    :
+                        ''
+                    }
+
                     <ul className="minicart-table-items">
                         { this.props.minicartItems.length ?
                             this.props.minicartItems.map(product => {
@@ -36,48 +52,18 @@ class Minicart extends Component {
                         }
                     </ul>
 
-                    <div className="cart-sidebar">
-                        <div className="cart-summary">
-                            {this.props.minicartSubtotals ?
-                                <div className="cart-summary-row cart-subtotals">
-                                    <strong>{'Cart Subtotal: '}</strong><span>{this.props.minicartSubtotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                                </div>
-                                :
-                                ''
-                            }
-                            { this.props.minicartDiscount ?
-                                <div className="cart-summary-row cart-discount">
-                                    <strong>{'Cart Discount: '}</strong><span>{this.props.minicartDiscount.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                                </div>
-                                :
-                                ''
-                            }
-                            {this.props.minicartShipping ?
-                                <div className="cart-summary-row cart-shipping">
-                                    <strong>{'Shipping: '}</strong><span>{this.props.minicartShipping.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                                </div>
-                                :
-                                ''
-                            }
-                            {this.props.minicartTotals ?
-                                <div className="cart-summary-row cart-totals">
-                                    <strong>{'Cart Total: '}</strong><span>{this.props.minicartTotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
-                                </div>
-                                :
-                                <div className="cart-summary-row cart-totals">
+                    { console.log(this.props.minicartItems) }
 
-                                </div>
-                            }
+                    { this.props.minicartTotals ?
+                        <div className="minicart-totals">
+                            <div className="minicart-totals-value">
+                                <strong>{'Cart Total: '}</strong><span>{this.props.minicartTotals.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + ' USD' }</span>
+                            </div>
+                            <button className="button-primary">{'Proceed to Checkout'}</button>
                         </div>
-
-                        <div className="cart-actions">
-                            {this.props.minicartTotals ?
-                                <button className="button-primary">{'Proceed to Checkout'}</button>
-                            :
-                                ''
-                            }
-                        </div>
-                    </div>
+                    :
+                        ''
+                    }
                 </div>
             </div>
         );
