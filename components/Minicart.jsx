@@ -24,7 +24,7 @@ class Minicart extends Component {
     render() {
         return (
             <div className="minicart">
-                <div className={this.state.minicartState ? 'minicart-title active' : 'minicart-title'}><button onClick={this.minicartState}>{'Minicart'} { this.props.minicartQty > 0 ? <strong>{ this.props.minicartQty }</strong> : '' }</button></div>
+                <div className={this.state.minicartState ? 'minicart-title active' : 'minicart-title'}><button onClick={this.minicartState}>{'Minicart'} { this.props.minicartQty > 0 ? <span>({ this.props.minicartQty })</span> : '' }</button></div>
                 <div className="minicart-table">
                     { this.props.minicartItems.length ?
                         <div className="minicart-subtitle">

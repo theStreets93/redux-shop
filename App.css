@@ -115,6 +115,22 @@ body {
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.header .minicart-title.active button:hover {
+    background-color: #444;
+}
+
+.header .minicart-title.active button {
+    background-color: #fff;
+    color: #222;
+}
+
+
+.header .minicart-title.active button:hover {
+    background-color: #fff;
+    color: #222;
 }
 
 .header .minicart-title.active + .minicart-table {
@@ -145,7 +161,6 @@ body {
     list-style-type: none;
     max-height: 325px;
     overflow: scroll;
-    border-bottom: 1px solid #ddd;
 }
 
 .header .minicart-list-item {
@@ -169,7 +184,7 @@ body {
 }
 
 .header .minicart-totals {
-
+    border-top: 1px solid #ddd;
 }
 
 .header .minicart-totals-value {
