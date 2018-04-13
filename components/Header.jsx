@@ -1,32 +1,39 @@
 import React from 'react';
 import logo from '../logo.svg';
 import {NavLink} from 'react-router-dom';
+import Minicart from './Minicart';
 
 const Header = () => (
-    <header className="header">
-        <img src={logo} className="logo" alt="logo" />
-        <h1 className="title">Welcome to React</h1>
-        <h3 className="subtitle">v2 - Redux Mode</h3>
+    <div>
+        <header className="header">
+            <div className="header-wrapper">
+                <div class="header-info">
+                    <h1 className="title"><img src={logo} className="logo" alt="logo" /> React.js</h1>
+                </div>
+
+                <Minicart />
+            </div>
+        </header>
         <nav className="main-nav">
-            <ul className="main-nav__list">
+            <ul className="main-nav--list">
                 <li>
-                    <NavLink className="nav__link" activeClassName="active" exact to="/">Home</NavLink>
+                    <NavLink className="main-nav--link" activeClassName="active" exact to="/">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink className="nav__link" activeClassName="active" to="/catalog">Catalog</NavLink>
+                    <NavLink className="main-nav--link" activeClassName="active" to="/catalog">Catalog</NavLink>
                 </li>
                 <li>
-                    <NavLink className="nav__link" activeClassName="active" to="/cart">Cart</NavLink>
+                    <NavLink className="main-nav--link" activeClassName="active" to="/cart">Cart</NavLink>
                 </li>
                 <li>
-                    <NavLink className="nav__link" activeClassName="active" to="/about">About</NavLink>
+                    <NavLink className="main-nav--link" activeClassName="active" to="/about">About</NavLink>
                 </li>
                 <li>
-                    <NavLink className="nav__link" activeClassName="active" to="/counter">Counter</NavLink>
+                    <NavLink className="main-nav--link" activeClassName="active" to="/counter">Counter</NavLink>
                 </li>
             </ul>
         </nav>
-    </header>
+    </div>
 );
 
 export default Header;

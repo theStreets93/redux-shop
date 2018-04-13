@@ -36,7 +36,8 @@ body {
 
 .logo {
     animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+    height: 60px;
+    vertical-align: middle;
 }
 
 @keyframes App-logo-spin {
@@ -55,8 +56,39 @@ body {
     text-align: center;
 }
 
+.header .header-wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.header-wrapper:after {
+    content: "";
+    clear: both;
+    width: 100%;
+    display: block;
+}
+
+.header .header-info {
+    float: left;
+}
+
+.header .minicart {
+    float: right;
+}
+
+.header .minicart-title {
+    display: block;
+}
+
+.header .minicart-table {
+    display: none;
+}
+
 .header .title {
     margin: 0;
+    font-size: 32px;
+    line-height: 64px;
+    font-weight: 600;
 }
 
 .header .subtitle {
@@ -68,15 +100,22 @@ body {
     font-size: 1.5em;
 }
 
+.main-nav {
+    clear: both;
+    display: block;
+    background-color: #444;
+}
+
 .main-nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .main-nav li {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 10px;
 }
 
 .main-nav a {
