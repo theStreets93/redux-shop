@@ -52,8 +52,6 @@ class Minicart extends Component {
                         }
                     </ul>
 
-                    { console.log(this.props.minicartItems) }
-
                     { this.props.minicartTotals ?
                         <div className="minicart-totals">
                             <div className="minicart-totals-value">

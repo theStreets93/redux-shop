@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import Minicart from './Minicart';
 
 const Header = () => (
@@ -8,7 +8,11 @@ const Header = () => (
         <header className="header">
             <div className="header-wrapper">
                 <div className="header-info">
-                    <h1 className="title"><img src={logo} className="logo" alt="logo" /> React.js</h1>
+                    <h1 className="title">
+                        <Link className="main-nav--link" exact="true" to="/">
+                            <img src={logo} className="logo" alt="logo" /> React.js
+                        </Link>
+                    </h1>
                 </div>
                 <div className="header-actions">
                     <Minicart />

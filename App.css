@@ -99,6 +99,16 @@ body {
     float: left;
 }
 
+.header-info a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.2s;
+}
+
+.header-info a:hover {
+    color: #61dafb;
+}
+
 .header .header-actions {
     float: right;
     padding: 15px 20px;
@@ -536,6 +546,12 @@ body {
     border: 0;
     padding: 5px 10px;
     float: right;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.minicart-item-button:hover {
+    background-color: #444;
 }
 
 .minicart-subtotal {
@@ -719,14 +735,14 @@ body {
     position: absolute;
     top: 10px;
     right: 0;
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     color: #fff;
     background-color: #222;
     display: block;
     text-align: center;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 28px;
     border: 0;
     padding: 0;
     cursor: pointer;

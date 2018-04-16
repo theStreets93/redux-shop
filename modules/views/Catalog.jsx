@@ -27,7 +27,7 @@ class Catalog extends Component {
             currentProduct: productid.id
         });
 
-        (!this.state.messageActive ? setTimeout(function() { this.setState({messageActive: false}) }.bind(this), 500) : this.setState({messageActive: true}) )
+        (!this.state.messageActive ? setTimeout(() => { this.setState({messageActive: false}) }, 500) : this.setState({messageActive: true}) )
     };
 
     render() {
