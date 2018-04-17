@@ -12,10 +12,10 @@ import { createStore } from './store';
 const store = createStore();
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Routing />
-    </Provider>,
-    document.getElementById('root')
+  <Provider store={store}>
+    <Routing />
+  </Provider>,
+  document.getElementById('root')
 );
 
 registerServiceWorker();
