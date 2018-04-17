@@ -1,0 +1,276 @@
+
+.header {
+	background-color: #222;
+	color: white;
+	text-align: center;
+}
+
+.header-wrapper {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.header-holder {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 100;
+}
+
+.header-wrapper:after {
+	content: "";
+	clear: both;
+	width: 100%;
+	display: block;
+}
+
+.header .header-info {
+	float: left;
+}
+
+.header-info a {
+	text-decoration: none;
+	color: #fff;
+	transition: color 0.2s;
+}
+
+.header-info a:hover {
+	color: #61dafb;
+}
+
+.header .header-actions {
+	float: right;
+	padding: 15px 20px;
+}
+
+.header .minicart {
+	position: relative;
+}
+
+.header .minicart-title button {
+	display: block;
+	background-color: transparent;
+	padding: 5px 20px;
+	color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.header .minicart-title.active button:hover {
+	background-color: #444;
+}
+
+.header .minicart-title.active button {
+	background-color: #fff;
+	color: #222;
+}
+
+.header .minicart-title.active button:hover {
+	background-color: #fff;
+	color: #222;
+}
+
+.header .minicart-title.active + .minicart-table {
+	display: block;
+}
+
+.header .minicart-table {
+	display: none;
+	position: absolute;
+	top: calc(100% + 15px);
+	right: 0;
+	padding: 20px;
+	width: 320px;
+	background-color: #fff;
+	color: #222;
+	border: 1px solid #444;
+	border-top: 0;
+}
+
+.header .minicart-subtitle {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.header .minicart-table-items {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	max-height: 325px;
+	overflow: scroll;
+}
+
+.header .minicart-list-item {
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.header .minicart-list-item:last-child {
+	border: 0;
+}
+
+.header .minicart-item-info {
+	text-align: left;
+}
+
+.header .minicart-item-qty,
+.header .minicart-item-price {
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 400;
+}
+
+.header .minicart-totals {
+	border-top: 1px solid #ddd;
+}
+
+.header .minicart-totals-value {
+	font-size: 20px;
+	line-height: 24px;
+	text-transform: uppercase;
+	padding: 15px 0;
+}
+
+.header .minicart-totals-value strong {
+	float: left;
+}
+
+.header .minicart-totals-value span {
+	float: right;
+}
+
+.header .minicart-totals-value:after {
+	content: "";
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+.header .title {
+	margin: 0;
+	font-size: 32px;
+	line-height: 60px;
+	font-weight: 600;
+}
+
+.header .subtitle {
+	margin-top: 0;
+	font-weight: 600;
+}
+
+.welcome-message {
+	font-size: 1.5em;
+}
+
+.logo {
+	animation: App-logo-spin infinite 20s linear;
+	height: 60px;
+	vertical-align: bottom;
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+/* MAIN NAVIGATION */
+
+.main-nav {
+	clear: both;
+	display: block;
+	background-color: #444;
+}
+
+.main-nav ul {
+	list-style-type: none;
+	padding: 0;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.main-nav li {
+	display: inline-block;
+	padding: 10px;
+}
+
+.main-nav a {
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 4px;
+}
+
+.main-nav a:not(.active):hover {
+	color: #61dafb;
+}
+
+.main-nav a.active {
+	background-color: #fff;
+	color: #222;
+}
+
+.main {
+	padding: 120px 20px 20px;
+	min-height: 400px;
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+/* MINICART */
+
+
+.minicart-list-item {
+
+}
+
+.minicart-list-item:after {
+	content: "";
+	display: block;
+	clear: both;
+	width: 100%;
+}
+
+.minicart-item-info {
+	float: left;
+	width: calc(100% - 35px);
+}
+
+.minicart-item-title {
+	font-weight: 600;
+}
+
+.minicart-item-price {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 300;
+}
+
+.minicart-item-button {
+	background-color: #222;
+	color: #fff;
+	border: 0;
+	padding: 5px 10px;
+	float: right;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.minicart-item-button:hover {
+	background-color: #444;
+}
+
+.minicart-subtotal {
+	border-top: 2px solid #222;
+	padding-top: 10px;
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: 600;
+}

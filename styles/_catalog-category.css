@@ -1,0 +1,245 @@
+
+.catalog-products {
+	padding: 30px 20px;
+	margin: 0 auto;
+	max-width: 1180px;
+}
+
+.catalog-products:after {
+	content: "";
+	display: block;
+	clear: both;
+	width: 100%;
+}
+
+.catalog-products-sidebar {
+	float: left;
+	width: 21%;
+}
+
+.catalog-products-sidebar-title {
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-bottom: 2px solid #222;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.layered-nav-items {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	border-bottom: 2px solid #222;
+	padding-bottom: 10px;
+}
+
+.layered-nav-title {
+	font-size: 20px;
+	line-height: 30px;
+	margin-bottom: 10px;
+}
+
+.layered-nav-item {
+	margin-bottom: 5px;
+}
+
+.layered-nav-item label {
+	font-size: 16px;
+	line-height: 24px;
+	cursor: pointer;
+}
+
+.layered-nav-item span:after {
+	content: "+";
+	color: #fff;
+	font-size: 20px;
+	line-height: 24px;
+	margin-left: 5px;
+	transition: color 0.2s;
+	vertical-align: bottom;
+}
+
+.layered-nav-item input:checked + span:after {
+	content: "-";
+}
+
+.layered-nav-item label:hover span:after {
+	color: #222;
+}
+
+.layered-nav-item input {
+	margin: 0 10px 0 0;
+	vertical-align: middle;
+}
+
+.layered-nav-item span {
+	vertical-align: middle;
+}
+
+.catalog-products-main {
+	float: right;
+	width: 78%;
+}
+
+.catalog-products .product-list-items {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.catalog-products .product-list-items:after {
+	content: "";
+	display: block;
+	clear: both;
+	width: 100%;
+}
+
+.catalog-products .product-list-item {
+	float: left;
+	width: 25%;
+	padding: 10px;
+	margin-bottom: 4%;
+	display: block;
+}
+
+.product-list-item .product-item-image {
+	border: 1px solid #ddd;
+	height: 0;
+	padding-bottom: 125%;
+}
+
+.product-list-item .product-item-image img {
+	display: block;
+}
+
+.product-list-item .product-item-info {
+	border: 1px solid #ddd;
+	border-top: 0;
+	padding: 20px;
+}
+
+.product-list-item .product-item-title {
+	margin: 0 0 20px;
+	font-size: 14px;
+	line-height: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.product-list-item .product-item-price {
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
+.product-list-item .product-item-button {
+	width: 100%;
+	display: block;
+	border: 0;
+	border-radius: 0;
+	background-color: #222;
+	color: #fff;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 300;
+	text-transform: uppercase;
+	padding: 10px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.product-list-item .product-item-button:hover {
+	background-color: #666;
+}
+
+.sidebar-minicart {
+	padding: 20px 0;
+}
+
+.sidebar-minicart-title {
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.sidebar-minicart-items {
+	padding: 20px 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.sidebar-widget {
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+}
+
+.sidebar-widget .sidebar-widget-title {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: 600;
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+}
+
+.sidebar-widget .sidebar-widget-content {
+	padding: 10px;
+}
+
+
+.product-list-pagination {
+	list-style-type: none;
+	width: 100%;
+	display: block;
+	padding: 0 10px 10px;
+	margin: 0 auto;
+}
+
+.product-list-pagination:after {
+	display: block;
+	clear: both;
+	content: '';
+	width: 100%;
+}
+
+.product-list-pagination .action button {
+	display: block;
+	padding: 10px 20px;
+	border: 0;
+	color: #fff;
+	background-color: #222;
+	text-align: center;
+	font-size: 16px;
+	line-height: 24px;
+	text-transform: uppercase;
+	transition: background-color 0.2s;
+	cursor: pointer;
+}
+
+.product-list-pagination .action.disabled button {
+	background-color: #999;
+	cursor: default;
+	pointer-events: none;
+}
+
+.product-list-pagination .action button:hover {
+	background-color: #666;
+}
+
+.product-list-pagination .prev {
+	float: left;
+}
+
+.product-list-pagination .next {
+	float: right;
+}
+
+.product-list-totals {
+	position: relative;
+	height: 0;
+	text-align: center;
+	line-height: 48px;
+	font-size: 20px;
+}

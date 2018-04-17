@@ -1,0 +1,135 @@
+
+.checkout-cart-index .cart-table {
+	padding: 20px 0;
+}
+
+.checkout-cart-index .cart-table:after {
+	clear: both;
+	content: "";
+	display: block;
+	width: 100%;
+}
+
+.checkout-cart-index .cart-title {
+	margin-bottom: 0;
+}
+
+.checkout-cart-index .cart-subtitle {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.checkout-cart-index .cart-sidebar {
+	float: right;
+	width: 23%;
+}
+
+.checkout-cart-index .cart-summary {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+.checkout-cart-index .cart-summary .cart-summary-row {
+
+}
+
+.checkout-cart-index .cart-summary .cart-summary-row.cart-totals {
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding-top: 5px;
+	margin-top: 5px;
+	border-top: 1px solid #ddd;
+}
+
+.checkout-cart-index .cart-summary .cart-summary-row.cart-totals:first-child {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.checkout-cart-index .cart-summary .cart-summary-row span {
+	float: right;
+}
+
+.checkout-cart-index .cart-summary .cart-summary-row strong {
+	font-weight: 700;
+}
+
+.checkout-cart-index .cart-table-items {
+	margin: 0;
+	list-style-type: none;
+	padding: 10px;
+	border: 1px solid #ddd;
+	float: left;
+	width: 75%;
+}
+
+.checkout-cart-index .cart-actions {
+	margin: 20px 0;
+}
+
+.checkout-cart-index .cart-actions .button-primary {
+	display: block;
+	background-color: #222;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+	border-radius: 0;
+	padding: 10px 20px;
+	width: 100%;
+	text-transform: uppercase;
+	transition: background-color 0.2s;
+}
+
+.checkout-cart-index .cart-actions .button-primary:hover {
+	background-color: #666;
+}
+
+.cart-list-item {
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+}
+
+.cart-list-item:last-child {
+	border: 0;
+}
+
+.cart-list-item .cart-item-info {
+	padding-right: 30px;
+}
+
+.cart-list-item .cart-item-title {
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: 400;
+}
+
+.cart-list-item .cart-item-qty {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.cart-list-item .cart-item-button {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	width: 28px;
+	height: 28px;
+	color: #fff;
+	background-color: #222;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	line-height: 28px;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.cart-list-item .cart-item-button:hover {
+	background-color: #666;
+}

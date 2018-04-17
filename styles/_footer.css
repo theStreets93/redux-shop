@@ -1,0 +1,12 @@
+.footer {
+	text-align: center;
+	background-color: #222;
+	padding: 20px 20px;
+}
+
+.footer .copyrights {
+	color: #fff;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 20px;
+}
